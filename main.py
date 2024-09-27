@@ -3,10 +3,10 @@ from datetime import datetime
 import smtplib
 import time
 
-MY_EMAIL = 'summasample30@gmail.com'
-MY_PASSWORD = 'sleu qzsw kshb vppv'
-MY_LAT = 12.979453 # Your latitude
-MY_LONG = 80.203345 # Your longitude
+MY_EMAIL = 'EMAIL_ID'
+MY_PASSWORD = 'PASSWORD'
+MY_LAT = LATITUDE # Your latitude
+MY_LONG = LONGITUDE # Your longitude
 
 def iss_overhead():
     response = requests.get(url="http://api.open-notify.org/iss-now.json")
@@ -42,7 +42,7 @@ while True:
         connection= smtplib.SMTP("smtp.gmail.com")
         connection.login(MY_EMAIL,MY_PASSWORD)
         connection.starttls()
-        connection.sendmail(from_addr=MY_EMAIL,to_addrs="j.jacksparrow87@gmail.com",msg="subject=iss_tracker\n\n the iss is above you look up!")
+        connection.sendmail(from_addr=MY_EMAIL,to_addrs="SENDER_EMAIL_ID",msg="subject=iss_tracker\n\n the iss is above you look up!")
         connection.close()
 
 
